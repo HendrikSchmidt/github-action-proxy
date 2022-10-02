@@ -5,6 +5,6 @@
     "author": "Hendrik Schmidt",
     "license": "MIT",
     "scripts": {
-        "start": "node app.js"
+        "start": "node app.mjs"
     }
 }
