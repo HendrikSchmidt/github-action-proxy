@@ -1,8 +1,7 @@
 import { env } from 'node:process';
+import http from 'node:http';
+import https from 'node:https';
 
-
-const http = require('node:http');
-const https = require('node:https');
 
 const hostname = env.ENV == 'production' ? env.PROXY_HOST : '127.0.0.1';
 const port = env.ENV == 'production' ? env.PROXY_PORT : 3000;
