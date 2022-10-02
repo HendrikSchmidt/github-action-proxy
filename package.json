@@ -1,0 +1,10 @@
+{
+    "name": "http-nodejs",
+    "version": "0.1.0",
+    "main": "index.js",
+    "author": "Hendrik Schmidt",
+    "license": "MIT",
+    "scripts": {
+        "start": "node app.js"
+    }
+}
