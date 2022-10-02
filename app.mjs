@@ -41,6 +41,6 @@ const server = http.createServer((req, res) => {
     res.end('Request proxied.');
 });
 
-server.listen(port, hostname, () => {
-    console.log(`Server running at ${hostname}:${port}/`);
+server.listen(port, () => {
+    console.log(`Server running at ${port}/`);
 });
