@@ -3,10 +3,16 @@ import http from 'node:http';
 import https from 'node:https';
 
 
-// const hostname = env.ENV == 'production' ? env.PROXY_HOST : '127.0.0.1';
 const port = env.ENV == 'production' ? env.PORT : 3000;
 
 const server = http.createServer((req, res) => {
+    if (!req.headers['authorization'] || req.headers['authorization'] != env.STRAPI_TOKEN) {
+        res.statusCode = 401;
+        res.setHeader('Content-Type', 'text/plain');
+        res.end('Invalid Authorization token.');
+        return;
+    }
+
     const postData = JSON.stringify({
         event_type: 'deploy-prod',
     });
