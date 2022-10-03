@@ -13,6 +13,9 @@ const server = http.createServer((req, res) => {
         return;
     }
 
+    const now = new Date();
+    console.log(`Proxying Strapi webhook to GitHub at ${now.toLocaleString()}.`)
+
     const postData = JSON.stringify({
         event_type: 'deploy-prod',
     });
